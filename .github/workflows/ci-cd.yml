@@ -31,9 +31,12 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
       run: |
         echo "Building Docker image..."
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest.
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
         echo "Pushing Docker image to ECR..."
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+ 
+
+    
 
     - name: Deploy to ECS
       env:
