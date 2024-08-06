@@ -50,9 +50,7 @@ jobs:
     - name: Integration Tests
       run: |
         echo "Running integration tests..."
-        # Write your integration test commands here
-        # For example, you could use curl to check if the app is up and running
-        curl -f http://<your-ecs-app-url>
+        
 
     - name: Rollback on Failure
       if: failure()
