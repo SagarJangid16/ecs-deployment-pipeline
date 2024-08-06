@@ -53,6 +53,7 @@ jobs:
     - name: Integration Tests
       run: |
         echo "Running integration tests..."
+        curl -f http://<public-ip>:8080 || exit 1     //your public ip and port 
         
 
     - name: Rollback on Failure
