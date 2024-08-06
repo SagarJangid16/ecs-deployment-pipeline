@@ -1,14 +1,14 @@
-ECS Deployment Pipeline
+### ECS Deployment Pipeline
 This repository contains a simple web application and a GitHub Actions CI/CD pipeline to deploy it to AWS ECS.
 
-Setup
-1. Create and Clone the Repository
+### Setup
+## 1. Create and Clone the Repository
 Copy code
 git clone https://github.com/SagarJangid16/ecs-deployment-pipeline.git
 
 
 
-2. Create IAM User and Assign Permissions
+## 2. Create IAM User and Assign Permissions
    
 Go to the IAM Management Console.
 Create a new IAM user with programmatic access.
@@ -20,7 +20,7 @@ Download the CSV file containing the Access Key ID and Secret Access Key.
 
 
 
-3. Create an ECR Repository
+## 3. Create an ECR Repository
 Go to the Amazon ECR Console.
 Click on Create repository.
 Name your repository (e.g., my-web-application).
@@ -28,12 +28,12 @@ Note down the repository URI (e.g., 123456789012.dkr.ecr.us-west-2.amazonaws.com
 
 
 
-4. Build image and push over the Ecr repo through ci cd
+## 4. Build image and push over the Ecr repo through ci cd
 
 
 
 
-5. Create an ECS Cluster and Service
+## 5. Create an ECS Cluster and Service
 // used free tier so taken this configuration can also use ALB
 Go to the Amazon ECS Console.
 Click on Clusters > Create Cluster.
@@ -50,7 +50,7 @@ Configure the network settings and security groups to allow inbound and outbound
 
 
 
-6. Configure GitHub Secrets
+## 6. Configure GitHub Secrets
 Go to your GitHub repository.
 Navigate to Settings > Secrets and variables > Actions > New repository secret.
 Add the following secrets:
@@ -64,7 +64,7 @@ ECS_SERVICE: The name of your ECS service.
 Usage
 
 
-Triggering the CI/CD Pipeline
+## Triggering the CI/CD Pipeline
 Push changes to the master branch to trigger the CI/CD pipeline.
 
 bash
@@ -75,11 +75,11 @@ git push origin main
 Testing
 The pipeline includes integration tests to verify the deployment.
 
-Rollback Functionality
+## Rollback Functionality
 Rollback functionality is implemented to revert the deployment in case of failures.
 
-Snapshots
+## Snapshots
 Include snapshots of each job and step from the GitHub Actions pipeline.
 
-Repository URL
+## Repository URL
 https://github.com/SagarJangid16/ecs-deployment-pipeline
